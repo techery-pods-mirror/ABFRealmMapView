@@ -205,7 +205,7 @@ static NSString *ABFGeoHashWithCoordinate(CLLocationCoordinate2D coordinate,
     
     NSString *objectGeoHash = ABFGeoHashWithCoordinate(annotation.coordinate, ABFMaxPrecision);
     
-    if ([self.geoHash isEqualToString:objectGeoHash]) {
+    if ([self.geoHash isEqualToString:objectGeoHash] && [self.safeObjects isEqual:annotation.safeObjects]) {
         
         return self.type == annotation.type;
     }
